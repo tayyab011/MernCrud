@@ -18,8 +18,10 @@ import {
 } from "../ApiRequest/Api";
 import { errortoast, getbase64, IsEmpty } from "../helper/Helper";
 import Loading from "./Loading";
+import { useNavigate } from "react-router-dom";
 
 const Dashboard = () => {
+  const router = useNavigate();
       let [loading, setloading] = useState(false);
   /* team service */
   let { nameref, serviceRef } = useRef();
@@ -171,9 +173,10 @@ const Dashboard = () => {
     }
   };
   /*  update teammember */
-    let updateservice_data = async (id) => {
-    window.location.href = `/update-service/${id}`;
-  }; 
+    let updateservice_data = async (data) => {
+  
+      router(`/update-service/${data._id}`, { state: data });
+    }; 
   /* service service  end*/
 
   return (
@@ -473,7 +476,7 @@ const Dashboard = () => {
 
                     <div className="flex justify-evenly mt-5">
                       <button
-                        onClick={() => updateservice_data(ser._id)}
+                        onClick={() => updateservice_data(ser)}
                         className="btn bg-green-600 hover:bg-green-200 text-base "
                       >
                         update
