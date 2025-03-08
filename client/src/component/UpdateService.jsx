@@ -108,6 +108,7 @@ const handleChange = (e) => {
                   id="img"
                   name="img"
                   onChange={getimg}
+                  value={updatedData.img}
                   className="w-full bg-gray-100 rounded border border-gray-300 py-1 px-3"
                 />
                 {/* Show old image preview */}
