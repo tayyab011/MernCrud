@@ -2,7 +2,7 @@ import axios from "axios";
 import { DeleteAlert, errortoast, successtoast } from "../helper/Helper.js";
 
 
-let baseurl = "http://localhost:5050/api";
+let baseurl = "https://merncrud-kjyp.onrender.com/api";
 
 
 class apicall {

@@ -32,7 +32,7 @@ const _dirname = path.resolve();
 
 
 const corsOptions = {
-  origin: "http://localhost:5173",
+  origin: "https://merncrud-kjyp.onrender.com",
   credentials: true,
 };
 app.use(cors(corsOptions));
