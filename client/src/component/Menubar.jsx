@@ -90,7 +90,7 @@ const Menubar = () => {
                   </NavLink>
                 </li>
                 <li className="m-1">
-                  <NavLink to="/contac" onClick={closeDropdown}>
+                  <NavLink to="/contact" onClick={closeDropdown}>
                     contact
                   </NavLink>
                 </li>
