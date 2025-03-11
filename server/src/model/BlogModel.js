@@ -1,7 +1,6 @@
 import mongoose, { version } from "mongoose";
 
-const DataSchema =mongoose.Schema(
-{
+const DataSchema =mongoose.Schema({
 img :{type:String },
 title :{type:String },
 des :{type:String }

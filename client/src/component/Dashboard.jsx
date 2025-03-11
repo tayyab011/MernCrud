@@ -55,10 +55,8 @@ const Dashboard = () => {
 
   useEffect(() => {
     (async () => {
-      setloading(true)
       let result = await getallteam();
       setteam(result);
-      setloading(false);
     })();
   }, []);
   /*  delete teammember */
@@ -250,7 +248,7 @@ const Dashboard = () => {
               </div>
             </section>
 
-            {!!loading == true ? <Loading /> : null}
+           
             <h2>see all team members</h2>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
               {team.map((member, index) => (
