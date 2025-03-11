@@ -188,111 +188,120 @@ const Dashboard = () => {
           </TabList>
           {/* //add team */}
           <TabPanel>
-            <h2>Add new team</h2>
+            <h2 className="text-2xl font-semibold mb-8">Add New Team</h2>
             <section className="text-gray-600 body-font relative">
-              <div className="container px-5 py-24 mx-auto">
-                <div className="lg:w-1/2 md:w-1/2 mx-auto w-2/3">
-                  <div className="flex flex-wrap ">
+              <div className="container px-5 py-12 mx-auto">
+                <div className="lg:w-1/2 md:w-2/3 mx-auto">
+                  <div className="flex flex-wrap mb-6">
                     <label
-                      for="name"
-                      className="leading-7 text-sm text-white  font-bold"
+                      htmlFor="img"
+                      className="leading-7 text-sm text-white font-bold"
                     >
-                      Team image:
+                      Team Image:
                     </label>
                     <input
                       onChange={getimg}
                       type="file"
                       id="img"
                       name="img"
-                      className="w-full bg-gray-100 bg-opacity-50 rounded border border-gray-300 focus:border-indigo-500 focus:bg-white focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out"
+                      className="w-full bg-gray-100 bg-opacity-50 rounded border border-gray-300 focus:border-indigo-500 focus:bg-white focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-2 px-3 leading-8 transition-colors duration-200 ease-in-out"
                     />
                   </div>
-                  <div className="flex flex-wrap ">
+                  <div className="flex flex-wrap mb-6">
                     <label
-                      for="name"
-                      className="leading-7 text-sm text-white  font-bold"
+                      htmlFor="name"
+                      className="leading-7 text-sm text-white font-bold"
                     >
-                      team name:
+                      Team Name:
                     </label>
                     <input
                       ref={(input) => (nameref = input)}
                       type="text"
                       id="name"
                       name="name"
-                      className="w-full bg-gray-100 bg-opacity-50 rounded border border-gray-300 focus:border-indigo-500 focus:bg-white focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out"
+                      className="w-full bg-gray-100 bg-opacity-50 rounded border border-gray-300 focus:border-indigo-500 focus:bg-white focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-2 px-3 leading-8 transition-colors duration-200 ease-in-out"
                     />
                   </div>
-                  <div className="flex flex-wrap ">
+                  <div className="flex flex-wrap mb-6">
                     <label
-                      for="name"
-                      className="leading-7 text-sm text-white  font-bold"
+                      htmlFor="service"
+                      className="leading-7 text-sm text-white font-bold"
                     >
-                      team service:
+                      Team Service:
                     </label>
                     <input
                       ref={(input) => (serviceRef = input)}
                       type="text"
-                      className="w-full bg-gray-100 bg-opacity-50 rounded border border-gray-300 focus:border-indigo-500 focus:bg-white focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out"
+                      id="service"
+                      name="service"
+                      className="w-full bg-gray-100 bg-opacity-50 rounded border border-gray-300 focus:border-indigo-500 focus:bg-white focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-2 px-3 leading-8 transition-colors duration-200 ease-in-out"
                     />
                   </div>
                 </div>
 
-                <div className="p-2 w-full">
+                <div className="p-2 w-full text-center">
                   <button
                     onClick={submitteamdata}
-                    className="flex mx-auto text-white bg-indigo-500 border-0 py-2 px-8 focus:outline-none hover:bg-indigo-600 rounded text-lg"
+                    className="text-white bg-indigo-500 border-0 py-2 px-8 focus:outline-none hover:bg-indigo-600 rounded text-lg"
                   >
-                    Add Product
+                    Add Team
                   </button>
                 </div>
               </div>
             </section>
 
-           
-            <h2>see all team members</h2>
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-              {team.map((member, index) => (
-                <div
-                  key={index}
-                  className="bg-white p-6 rounded-lg shadow-lg text-center"
-                >
-                  <img
-                    src={member.img}
-                    alt={member.name}
-                    className="w-24 h-24 object-cover rounded-full mx-auto mb-4"
-                  />
-                  <h4 className="text-lg font-semibold text-gray-800">
-                    {member.name}
-                  </h4>
-                  <p className="text-gray-600">{member.service}</p>
-                  <div className="flex justify-evenly mt-5">
-                    <button
-                      onClick={() => updatealldata(member._id)}
-                      className="btn bg-green-600 hover:bg-green-200 text-base "
-                    >
-                      update
-                    </button>
-                    <button
-                      onClick={() => deletetealldata(member._id)}
-                      className="btn bg-red-600 hover:bg-red-200 text-base "
-                    >
-                      delete
-                    </button>
+            <h2 className="text-2xl font-semibold mb-8">
+              See All Team Members
+            </h2>
+            <div className="mt-16 max-w-6xl mx-auto text-center">
+              <h3 className="text-2xl font-semibold text-gray-800 mb-6">
+                Our Team
+              </h3>
+              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+                {team.map((member, index) => (
+                  <div
+                    key={index}
+                    className="bg-white p-6 rounded-lg shadow-lg text-center"
+                  >
+                    <img
+                      src={member.img}
+                      alt={member.name}
+                      className="w-24 h-24 object-cover rounded-full mx-auto mb-4"
+                    />
+                    <h4 className="text-lg font-semibold text-gray-800">
+                      {member.name}
+                    </h4>
+                    <p className="text-gray-600">{member.service}</p>
+
+                    <div className="flex justify-evenly mt-5">
+                      <button
+                        onClick={() => updatealldata(member._id)}
+                        className="btn bg-green-600 hover:bg-green-200 text-base"
+                      >
+                        Update
+                      </button>
+                      <button
+                        onClick={() => deletetealldata(member._id)}
+                        className="btn bg-red-600 hover:bg-red-200 text-base"
+                      >
+                        Delete
+                      </button>
+                    </div>
                   </div>
-                </div>
-              ))}
+                ))}
+              </div>
             </div>
           </TabPanel>
 
           <TabPanel>
             <h2>Add new blog</h2>
             <section className="text-gray-600 body-font relative">
-              <div className="container px-5 py-24 mx-auto">
-                <div className="lg:w-1/2 md:w-1/2 mx-auto w-2/3">
-                  <div className="flex flex-wrap ">
+              <div className="container px-5 py-12 mx-auto">
+                <div className="w-full max-w-lg mx-auto">
+                  <div className="mb-4">
                     <label
-                      for="name"
-                      className="leading-7 text-sm text-white  font-bold"
+                      htmlFor="img"
+                      className="leading-7 text-sm text-white font-bold"
                     >
                       Blog image:
                     </label>
@@ -304,12 +313,12 @@ const Dashboard = () => {
                       className="w-full bg-gray-100 bg-opacity-50 rounded border border-gray-300 focus:border-indigo-500 focus:bg-white focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out"
                     />
                   </div>
-                  <div className="flex flex-wrap ">
+                  <div className="mb-4">
                     <label
-                      for="name"
-                      className="leading-7 text-sm text-white  font-bold"
+                      htmlFor="name"
+                      className="leading-7 text-sm text-white font-bold"
                     >
-                      blog title:
+                      Blog title:
                     </label>
                     <input
                       ref={(input) => (titleref = input)}
@@ -319,12 +328,12 @@ const Dashboard = () => {
                       className="w-full bg-gray-100 bg-opacity-50 rounded border border-gray-300 focus:border-indigo-500 focus:bg-white focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out"
                     />
                   </div>
-                  <div className="flex flex-wrap ">
+                  <div className="mb-4">
                     <label
-                      for="name"
-                      className="leading-7 text-sm text-white  font-bold"
+                      htmlFor="des"
+                      className="leading-7 text-sm text-white font-bold"
                     >
-                      Blog Des:
+                      Blog Description:
                     </label>
                     <input
                       ref={(input) => (desRef = input)}
@@ -332,140 +341,140 @@ const Dashboard = () => {
                       className="w-full bg-gray-100 bg-opacity-50 rounded border border-gray-300 focus:border-indigo-500 focus:bg-white focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out"
                     />
                   </div>
-                </div>
-
-                <div className="p-2 w-full">
-                  <button
-                    onClick={submitblogdata}
-                    className="flex mx-auto text-white bg-indigo-500 border-0 py-2 px-8 focus:outline-none hover:bg-indigo-600 rounded text-lg"
-                  >
-                    Add Blog
-                  </button>
+                  <div className="w-full text-center">
+                    <button
+                      onClick={submitblogdata}
+                      className="text-white bg-indigo-500 border-0 py-2 px-8 focus:outline-none hover:bg-indigo-600 rounded text-lg"
+                    >
+                      Add Blog
+                    </button>
+                  </div>
                 </div>
               </div>
             </section>
 
-            <h2>see all blog members</h2>
-            <section className="container  text-gray-600 body-font mx-auto ">
-              <div className=" grid grid-cols-3 flex-wrap   gap-9 ">
-                {blog.slice(0, 6).map((data, index) => {
-                  return (
-                    <div
-                      key={data.id}
-                      className="flex  -mb-10 text-center gap-6"
-                    >
-                      <div className=" mb-10 border border-red-800  ">
-                        <div className="rounded-lg h-64 overflow-hidden  ">
-                          <img
-                            alt="content"
-                            className="object-cover object-center h-full w-full"
-                            src={data.img}
-                           
-                          />
-                        </div>
-                        <h2 className="title-font text-2xl font-medium text-gray-200 mt-6 mb-3">
-                          {data.title}
-                        </h2>
-                        <p className="leading-relaxed text-base text-gray-200">
-                          {data.des}
-                        </p>
-                        <div className="flex justify-evenly mt-5">
-                          <button
-                            onClick={() => updateblogsdata(data._id)}
-                            className="btn bg-green-600 hover:bg-green-200 text-base "
-                          >
-                            update
-                          </button>
-                          <button
-                            onClick={() => deleteteallblogdata(data._id)}
-                            className="btn bg-red-600 hover:bg-red-200 text-base "
-                          >
-                            delete
-                          </button>
-                        </div>
-                      </div>
+            <h2>See all blog members</h2>
+            <section className="container text-gray-600 body-font mx-auto px-5 py-12">
+              <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+                {blog.slice(0, 6).map((data, index) => (
+                  <div
+                    key={data.id}
+                    className="border border-red-800 p-4 rounded-lg shadow-lg bg-gray-900"
+                  >
+                    <div className="rounded-lg h-64 overflow-hidden">
+                      <img
+                        alt="content"
+                        className="object-cover object-center h-full w-full"
+                        src={data.img}
+                      />
                     </div>
-                  );
-                })}
+                    <h2 className="title-font text-xl font-semibold text-gray-200 mt-4 mb-2">
+                      {data.title}
+                    </h2>
+                    <p className="leading-relaxed text-base text-gray-300">
+                      {data.des}
+                    </p>
+                    <div className="flex justify-between mt-4">
+                      <button
+                        onClick={() => updateblogsdata(data._id)}
+                        className="bg-green-600 hover:bg-green-400 text-white py-1 px-4 rounded"
+                      >
+                        Update
+                      </button>
+                      <button
+                        onClick={() => deleteteallblogdata(data._id)}
+                        className="bg-red-600 hover:bg-red-400 text-white py-1 px-4 rounded"
+                      >
+                        Delete
+                      </button>
+                    </div>
+                  </div>
+                ))}
               </div>
             </section>
           </TabPanel>
 
           {/*    service section */}
           <TabPanel>
-            <h2>Add new service</h2>
+            <h2 className="text-2xl font-semibold mb-8">Add New Service</h2>
             <section className="text-gray-600 body-font relative">
-              <div className="container px-5 py-24 mx-auto">
-                <div className="lg:w-1/2 md:w-1/2 mx-auto w-2/3">
-                  <div className="flex flex-wrap ">
+              <div className="container px-5 py-12 mx-auto">
+                <div className="lg:w-1/2 md:w-2/3 mx-auto">
+                  <div className="flex flex-wrap mb-6">
                     <label
-                      for="name"
-                      className="leading-7 text-sm text-white  font-bold"
+                      htmlFor="name"
+                      className="leading-7 text-sm text-white font-bold"
                     >
-                      service image:
+                      Service Image:
                     </label>
                     <input
                       onChange={getServiceimg}
                       type="file"
                       id="img"
                       name="img"
-                      className="w-full bg-gray-100 bg-opacity-50 rounded border border-gray-300 focus:border-indigo-500 focus:bg-white focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out"
+                      className="w-full bg-gray-100 bg-opacity-50 rounded border border-gray-300 focus:border-indigo-500 focus:bg-white focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-2 px-3 leading-8 transition-colors duration-200 ease-in-out"
                     />
                   </div>
-                  <div className="flex flex-wrap ">
+                  <div className="flex flex-wrap mb-6">
                     <label
-                      for="name"
-                      className="leading-7 text-sm text-white  font-bold"
+                      htmlFor="name"
+                      className="leading-7 text-sm text-white font-bold"
                     >
-                      service title:
+                      Service Title:
                     </label>
                     <input
                       ref={(input) => (servicetitleRef = input)}
                       type="text"
                       id="name"
                       name="name"
-                      className="w-full bg-gray-100 bg-opacity-50 rounded border border-gray-300 focus:border-indigo-500 focus:bg-white focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out"
+                      className="w-full bg-gray-100 bg-opacity-50 rounded border border-gray-300 focus:border-indigo-500 focus:bg-white focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-2 px-3 leading-8 transition-colors duration-200 ease-in-out"
                     />
                   </div>
-                  <div className="flex flex-wrap ">
+                  <div className="flex flex-wrap mb-6">
                     <label
-                      for="name"
-                      className="leading-7 text-sm text-white  font-bold"
+                      htmlFor="name"
+                      className="leading-7 text-sm text-white font-bold"
                     >
-                      service Des:
+                      Service Description:
                     </label>
                     <input
                       ref={(input) => (servicedesRef = input)}
                       type="text"
-                      className="w-full bg-gray-100 bg-opacity-50 rounded border border-gray-300 focus:border-indigo-500 focus:bg-white focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out"
+                      className="w-full bg-gray-100 bg-opacity-50 rounded border border-gray-300 focus:border-indigo-500 focus:bg-white focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-2 px-3 leading-8 transition-colors duration-200 ease-in-out"
                     />
                   </div>
                 </div>
 
-                <div className="p-2 w-full">
+                <div className="p-2 w-full text-center">
                   <button
                     onClick={submitservicedata}
-                    className="flex mx-auto text-white bg-indigo-500 border-0 py-2 px-8 focus:outline-none hover:bg-indigo-600 rounded text-lg"
+                    className="text-white bg-indigo-500 border-0 py-2 px-8 focus:outline-none hover:bg-indigo-600 rounded text-lg"
                   >
-                    Add service
+                    Add Service
                   </button>
                 </div>
               </div>
             </section>
 
-            <h2>see all service members</h2>
+            <h2 className="text-2xl font-semibold mb-8">
+              See All Service Members
+            </h2>
             <div className="mt-16 max-w-6xl mx-auto text-center">
               <h3 className="text-2xl font-semibold text-gray-800 mb-6">
                 Our Services
               </h3>
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
                 {service.map((ser, index) => (
                   <div
                     key={index}
                     className="bg-white p-6 rounded-lg shadow-lg text-center"
                   >
                     <div className="text-4xl mb-4">
-                      <img src={ser.img} />
+                      <img
+                        src={ser.img}
+                        alt={ser.title}
+                        className="max-w-full h-auto rounded-md"
+                      />
                     </div>
                     <h4 className="text-lg font-semibold text-gray-800">
                       {ser.title}
@@ -475,15 +484,15 @@ const Dashboard = () => {
                     <div className="flex justify-evenly mt-5">
                       <button
                         onClick={() => updateservice_data(ser)}
-                        className="btn bg-green-600 hover:bg-green-200 text-base "
+                        className="btn bg-green-600 hover:bg-green-200 text-base"
                       >
-                        update
+                        Update
                       </button>
                       <button
                         onClick={() => deleteteservice_data(ser._id)}
-                        className="btn bg-red-600 hover:bg-red-200 text-base "
+                        className="btn bg-red-600 hover:bg-red-200 text-base"
                       >
-                        delete
+                        Delete
                       </button>
                     </div>
                   </div>

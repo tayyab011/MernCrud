@@ -6,7 +6,7 @@ const AboutPage = () => {
     
     return (
       <MasterLayout>
-        <section className="bg-gray-500 py-16 px-6 md:px-12">
+        <section className=" py-16 px-6 md:px-12">
           <div className="max-w-6xl mx-auto text-center">
             <h2 className="text-3xl md:text-4xl font-bold text-gray-800 mb-6">
               About Me
